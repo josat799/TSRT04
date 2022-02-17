@@ -9,9 +9,14 @@ clear;
 years = load_years_data();
 traffic = load_traffic_data();
 
+figure
+line_plot(traffic, years, {'peta', 15}, 1)
 
 figure
-line_plot(traffic, years)
+% With scalar 
+line_plot(traffic, years, {'giga', 6}, 1/9.6)
+
+
 
 figure 
 subplot(2,1,1)

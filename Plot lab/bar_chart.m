@@ -21,7 +21,7 @@ else
 
 end
 
-
+b(3).FaceColor = 'k';
 xlabel('Years')
 ylabel('petabyte (10^{15})')
 title('Visualization for data traffic over the years from 2013:2018')
