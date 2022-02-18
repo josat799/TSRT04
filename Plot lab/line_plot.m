@@ -12,16 +12,27 @@ end
 
 p = plot(linspace(years(1), years(6), 6), traffic);
 
-p(1).LineWidth = 5;
-p(2).LineWidth = 5;
-p(3).Color = 'k';
-p(3).LineWidth = 5;
+[m, n] = size(traffic);
+
+for i=1:n
+    p(i).LineWidth = 2;
+    if i == 1 
+        p(i).LineStyle = '--';
+    elseif i == 2
+        p(i).LineStyle = ':';
+    elseif i == 3
+        p(i).Color = 'k';
+        legend({'Video', 'File transfer', 'Web and other'})
+    elseif i == 4
+        p(i).LineWidth = 5;
+        legend([p(4), p(1), p(3), p(2)], {'Total', 'Video', 'Web and other', 'File transfer'})
+    end
+end
 
 xticks(years)
-legend({'Video', 'File transfer', 'Web and other'})
 xlabel('Years')
 ylabel(ylabel_text)
-title('Data traffic within the categories [Video, File trnasfer, Web and other]')
+title('Data traffic')
 
 end
 
